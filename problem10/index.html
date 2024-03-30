@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Input Fields</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200 h-screen flex justify-center items-center">
+    <div class="space-y-4">
+        <!-- Stylish Input Field 1 -->
+        <div class="relative">
+            <input id="firstNumber" type="text" placeholder="Enter your first number"
+                class="bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent rounded-full px-4 py-2 w-72">
+            <div
+                class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+            </div>
+        </div>
+
+        <!-- Stylish Input Field 2 -->
+        <div class="relative">
+            <input id="secondNumber" type="text" placeholder="Enter your second number"
+                class="bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent rounded-full px-4 py-2 w-72">
+            <div
+                class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+            </div>
+        </div>
+
+        <!-- Stylish Buttons -->
+        <div class="flex justify-center space-x-4">
+            <button
+			id="multiply"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                Multiply
+            </button>
+            <button
+			id="divide"
+                class="bg-blue-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
+                Divide
+            </button>
+        </div>
+
+		<div>
+			<h1>Result is :<span id="result">0</span></h1>
+		</div>
+    </div>
+
+
+	<script>
+		document.getElementById("divide").addEventListener('click', function(){
+			let firstNumber = document.getElementById('firstNumber').value;
+			console.log(firstNumber);
+			let secondNumber = document.getElementById( 'secondNumber' ).value;
+			let result = document.getElementById('result');
+
+			let divide = firstNumber /  secondNumber;
+			console.log(divide);
+			result.innerText = divide;
+		})
+		document.getElementById("multiply").addEventListener('click', function(){
+			let firstNumber = document.getElementById('firstNumber').value;
+			console.log(firstNumber);
+			let secondNumber = document.getElementById( 'secondNumber' ).value;
+			let result = document.getElementById('result');
+
+			let divide = firstNumber *  secondNumber;
+			console.log(divide);
+			result.innerText = divide;
+		})
+	</script>
+</body>
+
+</html>
