@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <title>JavaScript basic animation</title>
+</head> 
+<body onload="animate_string('target2' , 'target')">
+  <pre id="target">w3resource </pre>
+  <pre id="target2">H3lloWorld </pre> <!-- Adjusted ID here -->
+
+  <script>
+    // Define a function that animates the characters of a string
+    function animate_string(id,ids) {
+      // Get the HTML element by its id
+      var element = document.getElementById(id);
+      var elements = document.getElementById(ids);
+      console.log(element);
+      // Access the text node inside the element (assuming no other children)
+      var textNode = element.childNodes[0];
+      var textNodes = elements.childNodes[0];
+      console.log(textNode);
+      // Extract the initial text content of the text node
+      var text = textNode.data;
+      var texts = textNodes.data;
+
+      // Set up an interval to rotate the characters in the text every 100 milliseconds
+      setInterval(function () {
+        // Move the last character to the beginning of the string
+        text = text[text.length - 1] + text.substring(0, text.length - 1);
+        texts = texts[texts.length - 1] + texts.substring(0, texts.length - 1);
+
+        // Update the text content of the text node with the modified string
+        textNode.data = text;
+        textNodes.data = texts;
+      }, 200);
+    } 
+  </script>
+</body> 
+</html>
